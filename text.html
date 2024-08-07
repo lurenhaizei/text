@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebView Communication</title>
+</head>
+<body>
+    <button onclick="sendMessage()">Send Message</button>
+    <script>
+        function sendMessage() {
+            const eventName = 'userLoggedIn';
+            const params = JSON.stringify({ userId: '12345' });
+            window.jsBridge?.postMessage(eventName, params);
+        }
+    </script>
+</body>
+</html>
